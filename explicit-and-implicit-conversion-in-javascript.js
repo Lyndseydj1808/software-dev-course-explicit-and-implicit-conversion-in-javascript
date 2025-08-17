@@ -20,13 +20,28 @@ Use console.log() to clearly show the before-and-after type conversions.
 
 
 let result = "5" - 2;
-console.log("The result is: " + result);
+console.log("The result is: " + result);//no change needed. JS implicitly converts string to number. 
 
 let isValid = Boolean("false");
-if (isValid) {
-    console.log("This is valid!");
+if (isValid) {//isValid is assigned booleanvalue true
+    console.log("This is valid!");//no change needed, code is executed properly
 }
 
-let age = "25";
-let totalAge = age + 5;
+let str = "25";
+let age = Number(str);//converted the age string to a number
+let totalAge = age + 5;//now it properly adds 5 to the age
 console.log("Total Age: " + totalAge);
+
+//my example of implicit type conversion
+
+let answer = "The answer is:" + 58;
+console.log(answer);//JavaScript implicitly changes the number to a string to combine.
+
+//my example of explicit type conversion
+
+let greeting = "Hello";
+let a1 = Boolean(greeting);//converts string into boolean
+let emptyGreeting = "";//empty string is falsy value
+let a2 = Boolean(emptyGreeting);//converts empty string into boolean
+console.log(a1)
+console.log(a2)
